@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class CircleProgress extends StatelessWidget {
    
-  const CircleProgress({Key? key}) : super(key: key);
+  final int step;
+  const CircleProgress({Key? key, this.step=1}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -16,20 +17,20 @@ class CircleProgress extends StatelessWidget {
             height: 40,
             child: Transform.rotate(
               angle: 320,
-              child: const CircularProgressIndicator(
-                backgroundColor:Color.fromARGB(255, 60, 70, 1),
-                valueColor: AlwaysStoppedAnimation<Color>( Colors.white),
-                value:1-(1/6)
+              child: CircularProgressIndicator(
+                backgroundColor:const Color.fromARGB(255, 60, 70, 1),
+                valueColor: const AlwaysStoppedAnimation<Color>( Colors.white),
+                value:1-(step/6)
               ),
             ),
           ),
           
-          const Positioned(
+          Positioned(
             left: 8,
             top: 12,
             child: Text(
-              "1/6",
-              style:TextStyle(
+              "$step/6",
+              style:const TextStyle(
                 color: Color.fromARGB(255, 60, 70, 1),
                 fontWeight: FontWeight.bold),
             ),

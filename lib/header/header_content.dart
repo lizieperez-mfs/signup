@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:init_signup/header/circle_progress.dart';
+import 'package:init_signup/model/header_text.dart';
 
 class HeaderContent extends StatelessWidget {
    
-  const HeaderContent({Key? key}) : super(key: key);
+  final int step;
+  final HeaderText headerText;
+
+  const HeaderContent({
+    Key? key, 
+    this.step=1, 
+    required this.headerText
+  }) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -25,16 +33,16 @@ class HeaderContent extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 44, top: 2),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const[
-                          Text('Número de telefono',
-                            style: TextStyle(
+                        children: [
+                          Text(headerText.primary,
+                            style: const TextStyle(
                               color:Color.fromRGBO(52, 60, 70, 1),
                               fontWeight: FontWeight.bold,
                               fontSize: 16),
             
                           ),
-                          Text('Siguiente correo electrónico',
-                            style: TextStyle(
+                          Text(headerText.secundary,
+                            style: const TextStyle(
                               fontSize:12, 
                               color:Color.fromRGBO(76, 88, 102, 1),
                               height: 1.5 
@@ -43,9 +51,9 @@ class HeaderContent extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Padding(
-                      padding:  EdgeInsets.fromLTRB(0, 0, 15, 0),
-                      child: CircleProgress()
+                    Padding(
+                      padding: const  EdgeInsets.fromLTRB(0, 0, 15, 0),
+                      child: CircleProgress(step:step)
                       )
                     ]
                   ),

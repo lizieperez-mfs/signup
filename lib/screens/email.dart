@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:init_signup/header/custom_appbar.dart';
 import 'package:init_signup/header/custom_scaffold.dart';
+import 'package:init_signup/model/header_text.dart';
 
 class EmailScreen extends StatelessWidget {
    
@@ -9,7 +9,12 @@ class EmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomScaffold(
-      content: Text ('Email Screen')
+      headerText: HeaderText(
+        primary: 'Escribe tu correo Electrónico', 
+        secundary: 'Siguiente: contraseña'
+      ) ,
+      content: Text ('Email Screen'),
+      step: 2,
       );
   }
 }

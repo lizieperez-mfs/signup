@@ -18,38 +18,37 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-     
-      backgroundColor: const Color.fromRGBO(255, 191, 14, 1),
-      elevation: 0,
-      leading: Container(
-        margin: const EdgeInsets.only(left: 10),
-        child: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Color.fromRGBO(52, 60, 70, 1),),
-          onPressed: () => Navigator.of(context).pop(),
+    return ColoredBox(
+      color:const Color.fromRGBO(255, 191, 14, 1),
+      child: Padding(
+        padding: const EdgeInsets.only(left:10, right: 20),
+        child: AppBar(
+          backgroundColor: const Color.fromRGBO(255, 191, 14, 1),
+          elevation: 0,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Color.fromRGBO(52, 60, 70, 1),),
+            onPressed: () => Navigator.of(context).pop(),
+          ), 
+    
+          centerTitle: true,
+          title: Container(
+            child: tigoSVG,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 0.5,
+                color: const Color.fromARGB(255, 255, 255, 255)
+              ),
+              borderRadius: BorderRadius.circular(5),
+            ),
+          ), 
+          actions: [
+            IconButton(
+              icon: questionSVG,
+              onPressed: () {}
+            ) 
+          ],
         ),
-      ), 
-
-      centerTitle: true,
-      title: Container(
-        child: tigoSVG,
-        decoration: BoxDecoration(
-          border: Border.all(
-            width: 0.5,
-            color: const Color.fromARGB(255, 255, 255, 255)
-          ),
-          borderRadius: BorderRadius.circular(5),
-        ),
-      ), 
-      actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 20),
-          child: IconButton(
-            icon: questionSVG,
-            onPressed: () {}
-          ),
-        ) 
-      ],
+      ),
     );
   }
 }

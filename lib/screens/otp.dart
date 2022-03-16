@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:init_signup/header/custom_scaffold.dart';
+import 'package:init_signup/model/header_text.dart';
 
 class OtpScreen extends StatelessWidget {
    
@@ -6,13 +8,13 @@ class OtpScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-        title: const Text('appBar Otp'),
-      ),
-      body: const Center(
-         child: Text('Otp'),
-      ),
+    return const CustomScaffold(
+      headerText: HeaderText(
+        primary: 'Número de teléfono', 
+        secundary: 'Siguiente: Correo electrónico'
+      ) ,
+      step: 1,
+      content: Text('Otp Page'),
     );
   }
 }
