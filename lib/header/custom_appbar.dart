@@ -3,9 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   static final  Widget questionSVG = SvgPicture.asset('assets/images/question.svg');
-  // final Widget questionInvisible = SvgPicture.asset('assets/images/question.svg',
-  //   color: const Color.fromRGBO(52, 60, 70, 0)
-  // );
   static final  Widget tigoSVG = SvgPicture.asset('assets/images/tigo_appbar.svg');
 
   const CustomAppBar({
