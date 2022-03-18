@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:init_signup/screens/otp/enter_phone_number.dart';
+import 'package:init_signup/screens/otp/verify_phone_number.dart';
 import 'package:init_signup/screens/screens.dart';
 
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       home: const HomeScreen(),
       // TODO: I put this here, just to try. This would be to refactorized
       routes: {
-        'otp': (BuildContext context)=>const OtpScreen(),
+        'otp': (BuildContext context)=>const VerifyPhoneNumber(),
         'email': (BuildContext context)=>const EmailScreen()
       },
     );
