@@ -22,14 +22,17 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
       appBar: const CustomAppBar(),
-      body: Column(
+      body: ListView(
         children:  [
           HeaderContent(
             headerText: headerText,
             step:step, 
           ),
+         
           content
+          
         ]
       ),
     );
