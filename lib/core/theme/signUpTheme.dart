@@ -28,7 +28,10 @@ class SignUpTheme {
   static const Color _circularTrackBackgroundColor = Colors.white;
 //**************************APP BAR COLORS**************************//
 
+//*************GENERAL THEME*************//
+
   static final ThemeData gralTheme = ThemeData(
+    appBarTheme: appBarTheme.appBarTheme,
     textTheme: const TextTheme(
       bodyMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
     ),
@@ -78,6 +81,8 @@ class SignUpTheme {
     ),
   );
 
+//*************APPBAR THEME*************//
+
   static final ThemeData appBarTheme = ThemeData(
     backgroundColor: _appBarBackgroundColor,
     textTheme: const TextTheme(
@@ -91,6 +96,7 @@ class SignUpTheme {
     ),
   );
 
+//*************STEP COUNTER THEME*************//
   static final ThemeData stepCounter = ThemeData(
     progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: _circularTrackBackgroundColor,
