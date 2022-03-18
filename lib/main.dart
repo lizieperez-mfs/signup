@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:init_signup/screens/screens.dart';
 
-import './theme/signUpTheme.dart';
+import 'package:init_signup/core/core.dart';
 
 void main() => runApp(const MyApp());
 
